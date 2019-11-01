@@ -61,8 +61,15 @@ public class ProblemSet5 {
      */
     
     public String middleMan(String text) {
-      return "1";
+    int lengthOfString = text.length();
+    int subtractedLength = lengthOfString - 3;
+    int fromEachSide = subtractedLength / 2;
+    if ((text != null && !text.equals("")) && (text.length() >= 3 && (text.length() % 2 == 1))) {
+      return text.substring(fromEachSide, text.length() - fromEachSide);
+    } else {
+      return text;
     }
+  }
     
     /*
      * Exercise 4.
