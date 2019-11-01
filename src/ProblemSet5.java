@@ -22,6 +22,8 @@ public class ProblemSet5 {
         ProblemSet5 ps = new ProblemSet5();
 	      System.out.println(ps.surroundMe("termin", "inus"));
 	      System.out.println(ps.endsMeet("absolute", 3));
+	      System.out.println(ps.middleMan("lastima"));
+	      System.out.println(ps.isCentered("lacrimosa", "rim"));
     }
     
     /*
@@ -79,8 +81,16 @@ public class ProblemSet5 {
      */
     
     public boolean isCentered(String text, String target) {
-      return true;
+    int lengthOfString = text.length();
+    int subtractedLength = lengthOfString - 3;
+    int fromEachSide = subtractedLength / 2;
+    if ((text != null && !text.equals("")) && (text.length() >= 3 && (text.length() % 2 == 1)) && (target != null && !target.equals("")) && (target.length() == 3)) {
+      String midThree = text.substring(fromEachSide, text.length() - fromEachSide);
+      return (midThree.equals(target));
+    } else {
+      return false;
     }
+  }
     
     /*
      * Exercise 5.
