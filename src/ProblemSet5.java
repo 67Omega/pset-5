@@ -21,6 +21,7 @@ public class ProblemSet5 {
     public static void main(String[] args) {
         ProblemSet5 ps = new ProblemSet5();
 	      System.out.println(ps.surroundMe("termin", "inus"));
+	      System.out.println(ps.endsMeet("absolute", 3));
     }
     
     /*
@@ -46,7 +47,11 @@ public class ProblemSet5 {
      */
     
     public String endsMeet(String text, int n) {
-      return "1";
+      if ((text != null && !text.equals("")) && (text.length() >= 1 && text.length() <= 10) && (((Integer.toString(n)).length() >= 1 && ((Integer.toString(n)).length() <= text.length())))) {
+      return text.substring(0, n) + text.substring((text.length() - n));
+    } else {
+      return text;
+    }
     }
     
     /*
