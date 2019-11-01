@@ -15,11 +15,12 @@
  * Work through these exercises on your own. Experiment, make mistakes, ask
  * questions, and fix your mistakes. It's the only way to get good at programming.
  */
-
+ 
 public class ProblemSet5 {
     
     public static void main(String[] args) {
-        
+        ProblemSet5 ps = new ProblemSet5();
+	      System.out.println(ps.surroundMe("termin", "inus"));
     }
     
     /*
@@ -30,8 +31,12 @@ public class ProblemSet5 {
      */
     
     public String surroundMe(String in, String out) {
-
+    if ((in != null && !in.equals("")) && (out != null && !out.equals("")) && (out.length() == 4)) {
+      return (out.substring(0, 2) + in + out.substring (2, 4));
+    } else {
+      return in;
     }
+  }
     
     /*
      * Exercise 2.
@@ -41,7 +46,7 @@ public class ProblemSet5 {
      */
     
     public String endsMeet(String text, int n) {
-
+      return "1";
     }
     
     /*
@@ -51,7 +56,7 @@ public class ProblemSet5 {
      */
     
     public String middleMan(String text) {
-
+      return "1";
     }
     
     /*
@@ -62,7 +67,7 @@ public class ProblemSet5 {
      */
     
     public boolean isCentered(String text, String target) {
-
+      return true;
     }
     
     /*
@@ -72,7 +77,7 @@ public class ProblemSet5 {
      */
     
     public int countMe(String text, char suffix) {
-
+return 1;
     }
     
     /*
@@ -82,7 +87,7 @@ public class ProblemSet5 {
      */
     
     public int triplets(String text) {
-
+return 1;
     }
     
     /*
@@ -92,7 +97,7 @@ public class ProblemSet5 {
      */
     
     public long addMe(String text) {
-
+return 1;
     }
     
     /*
@@ -102,7 +107,7 @@ public class ProblemSet5 {
      */
     
     public long sequence(String text) {
-
+return 1;
     }
     
     /*
@@ -113,7 +118,7 @@ public class ProblemSet5 {
      */
     
     public String intertwine(String a, String b) {
-
+return "1";
     }
     
     /*
@@ -123,6 +128,6 @@ public class ProblemSet5 {
      */
     
     public boolean isPalindrome(String text) {
-
+return true;
     }
 }
