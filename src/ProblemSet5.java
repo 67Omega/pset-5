@@ -25,6 +25,7 @@ public class ProblemSet5 {
 	      System.out.println(ps.middleMan("lastima"));
 	      System.out.println(ps.isCentered("lacrimosa", "rim"));
 	      System.out.println(ps.countMe("Ecce! In pictura est puella, nomine Cornelia. Cornelia est puella Romana quae in Italia habitata", 'a'));
+	      System.out.println(ps.triplets("dophelsdowaaarowistermiiinulllaAae"));
     }
     
     /*
@@ -132,9 +133,19 @@ public class ProblemSet5 {
      * Given a string, compute the number of triplets in text.
      */
     
-    public int triplets(String text) {
-return 1;
+public int triplets(String text) {
+    int tripletCounter = 0;
+    if ((text != null && !text.equals(""))) {
+      for (int countUp = 2; countUp <= text.length(); countUp++) {
+        if (((text.charAt(countUp - 1) == (text.charAt(countUp - 2))) && (text.charAt(countUp - 1) == (text.charAt(countUp - 3))))) {
+          tripletCounter += 1;
+        }
+      }
+      return tripletCounter;
+    } else {
+      return -1;
     }
+  }
     
     /*
      * Exercise 7.
