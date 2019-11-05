@@ -24,6 +24,7 @@ public class ProblemSet5 {
 	      System.out.println(ps.endsMeet("absolute", 3));
 	      System.out.println(ps.middleMan("lastima"));
 	      System.out.println(ps.isCentered("lacrimosa", "rim"));
+	      System.out.println(ps.countMe("Ecce! In pictura est puella, nomine Cornelia. Cornelia est puella Romana quae in Italia habitata", 'a'));
     }
     
     /*
@@ -98,9 +99,32 @@ public class ProblemSet5 {
      * Given a string and a character, compute the number of words that end in suffix.
      */
     
-    public int countMe(String text, char suffix) {
-return 1;
+      public int countMe(String text, char suffix) {
+    int wordMatchCounter = 0;
+    String suffixString = Character.toString(suffix);
+    if ((text != null && !text.equals("")) && Character.isLetter(suffix)) {
+      for (int counter = 1; counter <= text.length(); counter++) {
+        char countChar = text.charAt(counter - 1);
+        boolean charMatches = (Character.isLetter(countChar));
+        if (charMatches == false) {
+          String word = text.substring(0, counter - 1);
+          text = text.substring(counter);
+          counter = 0;
+          if (word.endsWith(suffixString)) {
+            wordMatchCounter += 1;
+          }
+        }
+        if (counter == text.length()) {
+          if (text.endsWith(suffixString)) {
+            wordMatchCounter += 1;
+          }
+        }
+      }
+      return wordMatchCounter;
+    } else {
+      return -1;
     }
+  }
     
     /*
      * Exercise 6.
